@@ -1,6 +1,10 @@
 package ru.home.app.models;
 
 import lombok.*;
+import org.javamoney.moneta.Money;
+
+import javax.money.MonetaryAmount;
+import java.math.BigDecimal;
 
 @Data
 @AllArgsConstructor
@@ -8,6 +12,10 @@ import lombok.*;
 @Builder
 @ToString
 public class Balance {
-    private Double amount;
+    private Number amount;
     private String currency;
+
+    public MonetaryAmount getMonetary() {
+        return Money.of(this.getAmount(), this.getCurrency());
+    }
 }

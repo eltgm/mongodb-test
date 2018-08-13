@@ -9,11 +9,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@ToString
 @Document(collection = "gates")
 public class Gate {
     @Id
     ObjectId id;
     String name;
-    private Balance balance;
+    Balance balance;
+
+    @Override
+    public String toString() {
+        return this.getId() + " " + this.getName() + " " + this.getBalance().getMonetary();
+    }
 }

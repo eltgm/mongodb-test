@@ -1,7 +1,10 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '1.5.12.RELEASE'
+    id 'org.springframework.boot' version '2.0.3.RELEASE'
+    id "io.spring.dependency-management" version "1.0.6.RELEASE"
 }
+
+apply plugin: "io.spring.dependency-management"
 
 group 'ru.home'
 version '1.0'
@@ -17,13 +20,17 @@ dependencies {
 
     compile 'org.springframework.boot:spring-boot-starter-web'
 
-// https://mvnrepository.com/artifact/org.projectlombok/lombok
-    compileOnly 'org.projectlombok:lombok:1.18.2'
+    compile 'org.springframework.boot:spring-boot-starter-freemarker'
+    compile 'org.springframework.boot:spring-boot-starter-data-mongodb'
 
-    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-freemarker
+/*    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-freemarker
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-freemarker', version: '1.1.7.RELEASE'
 
-// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-mongodb
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-mongodb', version: '1.5.15.RELEASE'
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-mongodb
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-mongodb', version: '1.5.15.RELEASE'*/
 
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly 'org.projectlombok:lombok:1.18.2'
+
+    compile 'org.javamoney:moneta:1.2.1'
 }
